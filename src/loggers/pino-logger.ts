@@ -25,7 +25,7 @@ export class PinoLogger implements ILogger {
                }
                : undefined,
          });
-      } catch (error) {
+      } catch {
          // Fallback to console if pino is not available
          console.warn(
             '[PinoLogger] Pino not found. Falling back to console logger. Install pino: bun add pino'

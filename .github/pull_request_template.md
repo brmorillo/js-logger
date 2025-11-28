@@ -33,6 +33,7 @@
 <!-- Certifique-se de que seus commits seguem o padrão Conventional Commits -->
 
 Exemplos:
+
 - `feat: add new logger method`
 - `fix: resolve memory leak in PinoLogger`
 - `docs: update README with examples`

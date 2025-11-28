@@ -161,12 +161,14 @@ Configure no GitHub Settings > Secrets > Actions:
 Configure em Settings > Branches:
 
 **Branch `main`:**
+
 - ✅ Require pull request reviews
 - ✅ Require status checks to pass
 - ✅ Require branches to be up to date
 - ✅ Include administrators
 
 **Branch `homolog`:**
+
 - ✅ Require pull request reviews
 - ✅ Require status checks to pass
 
@@ -174,20 +176,22 @@ Configure em Settings > Branches:
 
 Após o push para `main`:
 
-1. **GitHub Actions**: https://github.com/brmorillo/logger/actions
-2. **NPM Package**: https://www.npmjs.com/package/@brmorillo/logger
-3. **GitHub Releases**: https://github.com/brmorillo/logger/releases
+1. **GitHub Actions**: <https://github.com/brmorillo/logger/actions>
+2. **NPM Package**: <https://www.npmjs.com/package/@brmorillo/logger>
+3. **GitHub Releases**: <https://github.com/brmorillo/logger/releases>
 
 ## 🐛 Troubleshooting
 
 ### Release não foi criado
 
 **Possíveis causas:**
+
 - Commits não seguem Conventional Commits
 - Não há mudanças desde a última release
 - Erro nos testes ou build
 
 **Solução:**
+
 ```bash
 # Ver logs da pipeline
 gh run view --log
@@ -205,6 +209,7 @@ git push origin main
 **Causa comum:** Tipo de commit incorreto
 
 **Solução:**
+
 ```bash
 # Se ainda não foi publicado, fazer amend
 git commit --amend
@@ -218,13 +223,15 @@ git push origin main
 ### Falha na publicação no NPM
 
 **Possíveis causas:**
+
 - Token NPM expirado ou inválido
 - Versão já existe no NPM
 - Permissões insuficientes
 
 **Solução:**
+
 1. Verificar token no GitHub Secrets
-2. Gerar novo token no NPM: https://www.npmjs.com/settings/~/tokens
+2. Gerar novo token no NPM: <https://www.npmjs.com/settings/~/tokens>
 3. Atualizar secret `NPM_JS`
 
 ## 📚 Recursos
@@ -247,7 +254,7 @@ Antes de fazer merge para `main`:
 - [ ] Versão será incrementada automaticamente ✨
 - [ ] NPM publish será automático ✨
 
-## 🎉 Pronto!
+## 🎉 Pronto
 
 Agora você tem um processo de release totalmente automatizado!
 

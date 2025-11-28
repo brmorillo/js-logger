@@ -41,7 +41,7 @@ export class WinstonLogger implements ILogger {
             format,
             transports: [new winston.transports.Console()],
          });
-      } catch (error) {
+      } catch {
          // Fallback to console if winston is not available
          console.warn(
             '[WinstonLogger] Winston not found. Falling back to console logger. Install winston: bun add winston'
