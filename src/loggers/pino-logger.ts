@@ -5,8 +5,7 @@ import { ILogger } from '../interfaces/logger.interface';
  * Provides high-performance JSON logging using Pino
  */
 export class PinoLogger implements ILogger {
-  private logger: any;
-
+  private logger: unknown;
   constructor(options: { level?: string; prettyPrint?: boolean } = {}) {
     try {
       // Dynamic import to avoid requiring pino as a direct dependency
@@ -37,29 +36,29 @@ export class PinoLogger implements ILogger {
   /**
    * Logs an informational message
    */
-  info(message: string, ...meta: any[]): void {
-    this.logger.info({ meta }, message);
+  info(message: string, ...meta: unknown[]): void {
+    (this.logger as any).info({ meta }, message);
   }
 
   /**
    * Logs a warning message
    */
-  warn(message: string, ...meta: any[]): void {
-    this.logger.warn({ meta }, message);
+  warn(message: string, ...meta: unknown[]): void {
+    (this.logger as any).warn({ meta }, message);
   }
 
   /**
    * Logs an error message
    */
-  error(message: string, ...meta: any[]): void {
-    this.logger.error({ meta }, message);
+  error(message: string, ...meta: unknown[]): void {
+    (this.logger as any).error({ meta }, message);
   }
 
   /**
    * Logs a debug message
    */
-  debug(message: string, ...meta: any[]): void {
-    this.logger.debug({ meta }, message);
+  debug(message: string, ...meta: unknown[]): void {
+    (this.logger as any).debug({ meta }, message);
   }
 
   /**
@@ -67,13 +66,13 @@ export class PinoLogger implements ILogger {
    */
   private createFallbackLogger() {
     return {
-      info: (meta: any, message: string) =>
+      info: (meta: unknown, message: string) =>
         console.info(`[INFO] ${message}`, meta),
-      warn: (meta: any, message: string) =>
+      warn: (meta: unknown, message: string) =>
         console.warn(`[WARN] ${message}`, meta),
-      error: (meta: any, message: string) =>
+      error: (meta: unknown, message: string) =>
         console.error(`[ERROR] ${message}`, meta),
-      debug: (meta: any, message: string) =>
+      debug: (meta: unknown, message: string) =>
         console.debug(`[DEBUG] ${message}`, meta),
     };
   }

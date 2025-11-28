@@ -5,8 +5,7 @@ import { ILogger } from '../interfaces/logger.interface';
  * Provides flexible logging with multiple transports using Winston
  */
 export class WinstonLogger implements ILogger {
-  private logger: any;
-
+  private logger: unknown;
   constructor(options: { level?: string; prettyPrint?: boolean } = {}) {
     try {
       // Dynamic import to avoid requiring winston as a direct dependency
@@ -21,7 +20,7 @@ export class WinstonLogger implements ILogger {
                 level: string;
                 message: string;
                 timestamp: string;
-                [key: string]: any;
+                [key: string]: unknown;
               }) => {
                 const { level, message, timestamp, ...meta } = info;
                 const metaStr = Object.keys(meta).length
@@ -53,29 +52,29 @@ export class WinstonLogger implements ILogger {
   /**
    * Logs an informational message
    */
-  info(message: string, ...meta: any[]): void {
-    this.logger.info(message, ...meta);
+  info(message: string, ...meta: unknown[]): void {
+    (this.logger as any).info(message, ...meta);
   }
 
   /**
    * Logs a warning message
    */
-  warn(message: string, ...meta: any[]): void {
-    this.logger.warn(message, ...meta);
+  warn(message: string, ...meta: unknown[]): void {
+    (this.logger as any).warn(message, ...meta);
   }
 
   /**
    * Logs an error message
    */
-  error(message: string, ...meta: any[]): void {
-    this.logger.error(message, ...meta);
+  error(message: string, ...meta: unknown[]): void {
+    (this.logger as any).error(message, ...meta);
   }
 
   /**
    * Logs a debug message
    */
-  debug(message: string, ...meta: any[]): void {
-    this.logger.debug(message, ...meta);
+  debug(message: string, ...meta: unknown[]): void {
+    (this.logger as any).debug(message, ...meta);
   }
 
   /**
@@ -83,13 +82,13 @@ export class WinstonLogger implements ILogger {
    */
   private createFallbackLogger() {
     return {
-      info: (message: string, ...meta: any[]) =>
+      info: (message: string, ...meta: unknown[]) =>
         console.info(`[INFO] ${message}`, ...meta),
-      warn: (message: string, ...meta: any[]) =>
+      warn: (message: string, ...meta: unknown[]) =>
         console.warn(`[WARN] ${message}`, ...meta),
-      error: (message: string, ...meta: any[]) =>
+      error: (message: string, ...meta: unknown[]) =>
         console.error(`[ERROR] ${message}`, ...meta),
-      debug: (message: string, ...meta: any[]) =>
+      debug: (message: string, ...meta: unknown[]) =>
         console.debug(`[DEBUG] ${message}`, ...meta),
     };
   }

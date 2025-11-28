@@ -14,7 +14,7 @@ export class ConsoleLogger implements ILogger {
   /**
    * Logs an informational message
    */
-  info(message: string, ...meta: any[]): void {
+  info(message: string, ...meta: unknown[]): void {
     if (this.shouldLog('info')) {
       console.info(`[INFO] ${message}`, ...meta);
     }
@@ -23,7 +23,7 @@ export class ConsoleLogger implements ILogger {
   /**
    * Logs a warning message
    */
-  warn(message: string, ...meta: any[]): void {
+  warn(message: string, ...meta: unknown[]): void {
     if (this.shouldLog('warn')) {
       console.warn(`[WARN] ${message}`, ...meta);
     }
@@ -32,7 +32,7 @@ export class ConsoleLogger implements ILogger {
   /**
    * Logs an error message
    */
-  error(message: string, ...meta: any[]): void {
+  error(message: string, ...meta: unknown[]): void {
     if (this.shouldLog('error')) {
       console.error(`[ERROR] ${message}`, ...meta);
     }
@@ -41,7 +41,7 @@ export class ConsoleLogger implements ILogger {
   /**
    * Logs a debug message
    */
-  debug(message: string, ...meta: any[]): void {
+  debug(message: string, ...meta: unknown[]): void {
     if (this.shouldLog('debug')) {
       console.debug(`[DEBUG] ${message}`, ...meta);
     }

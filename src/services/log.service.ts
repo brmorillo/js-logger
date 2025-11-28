@@ -46,7 +46,7 @@ export class LogService {
    * @param message The message to log
    * @param meta Additional metadata
    */
-  public log(message: string, ...meta: any[]): void {
+  public log(message: string, ...meta: unknown[]): void {
     this.logger.info(message, ...meta);
   }
 
@@ -55,7 +55,7 @@ export class LogService {
    * @param message The message to log
    * @param meta Additional metadata
    */
-  public info(message: string, ...meta: any[]): void {
+  public info(message: string, ...meta: unknown[]): void {
     this.logger.info(message, ...meta);
   }
 
@@ -64,7 +64,7 @@ export class LogService {
    * @param message The message to log
    * @param meta Additional metadata
    */
-  public warn(message: string, ...meta: any[]): void {
+  public warn(message: string, ...meta: unknown[]): void {
     this.logger.warn(message, ...meta);
   }
 
@@ -73,7 +73,7 @@ export class LogService {
    * @param message The message to log
    * @param meta Additional metadata
    */
-  public error(message: string, ...meta: any[]): void {
+  public error(message: string, ...meta: unknown[]): void {
     this.logger.error(message, ...meta);
   }
 
@@ -82,7 +82,7 @@ export class LogService {
    * @param message The message to log
    * @param meta Additional metadata
    */
-  public debug(message: string, ...meta: any[]): void {
+  public debug(message: string, ...meta: unknown[]): void {
     this.logger.debug(message, ...meta);
   }
 
@@ -91,7 +91,7 @@ export class LogService {
    * @param message The message to log
    * @param meta Additional metadata
    */
-  public verbose(message: string, ...meta: any[]): void {
+  public verbose(message: string, ...meta: unknown[]): void {
     this.logger.debug(message, ...meta);
   }
 
@@ -100,7 +100,7 @@ export class LogService {
    * @param message The message to log
    * @param meta Additional metadata
    */
-  public fatal(message: string, ...meta: any[]): void {
+  public fatal(message: string, ...meta: unknown[]): void {
     this.logger.error(message, ...meta);
   }
 
