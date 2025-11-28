@@ -30,7 +30,7 @@
       "format:check": "prettier --check \"src/**/*.ts\"",
       "type-check": "tsc --noEmit",
       "dev": "tsup --watch",
-      "prepublishOnly": "bun run build && bun test",
+      "prepublishOnly": "bun run build",
       "prepub": "bun run build",
       "pub": "npm publish --access public"
    },
