@@ -74,12 +74,12 @@
    },
    "repository": {
       "type": "git",
-      "url": "git+https://github.com/brmorillo/logger.git"
+      "url": "git+https://github.com/brmorillo/js-logger.git"
    },
    "bugs": {
-      "url": "https://github.com/brmorillo/logger/issues"
+      "url": "https://github.com/brmorillo/js-logger/issues"
    },
-   "homepage": "https://github.com/brmorillo/logger#readme",
+   "homepage": "https://github.com/brmorillo/js-logger#readme",
    "type": "commonjs",
    "engines": {
       "node": ">=18.0.0",
