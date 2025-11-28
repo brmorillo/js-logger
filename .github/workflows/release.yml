@@ -15,7 +15,7 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    environment: production
+    environment: PRD
 
     steps:
       - name: Checkout
