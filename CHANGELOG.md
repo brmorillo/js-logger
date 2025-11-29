@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0](https://github.com/brmorillo/js-logger/compare/v1.0.2...v2.0.0) (2025-11-29)
+
+### ⚠ BREAKING CHANGES
+
+* Pino is now a required dependency (adds ~500KB to bundle size)
+
+### Features
+
+* add comprehensive unit tests and husky pre-push hooks ([9941aac](https://github.com/brmorillo/js-logger/commit/9941aacebabc2a25e1d83525bb8786fdb96ba67f))
+* include Pino as default dependency ([5465705](https://github.com/brmorillo/js-logger/commit/54657057b23e812061cea9b162580cc136d77b54))
+
+### Bug Fixes
+
+* exclude test files from eslint to fix pre-push hook ([974542b](https://github.com/brmorillo/js-logger/commit/974542bf90a0fa6f4ab58b9b9b4e69f09fffc204))
+
 ## [1.0.2](https://github.com/brmorillo/js-logger/compare/v1.0.1...v1.0.2) (2025-11-28)
 
 ### Bug Fixes
