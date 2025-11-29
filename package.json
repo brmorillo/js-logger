@@ -1,6 +1,6 @@
 {
    "name": "@brmorillo/logger",
-   "version": "0.1.0",
+   "version": "1.0.2",
    "description": "A flexible and extensible logging library supporting multiple logger implementations (Pino, Winston, Console)",
    "main": "dist/index.js",
    "module": "dist/index.mjs",
@@ -19,18 +19,19 @@
       "package.json"
    ],
    "scripts": {
-      "build": "tsup",
+      "build": "tsc && tsup",
       "build:watch": "tsup --watch",
       "test": "bun test",
       "test:watch": "bun test --watch",
       "test:coverage": "bun test --coverage",
-      "lint": "eslint --config eslint.config.mjs src/**/*.ts",
-      "lint:fix": "eslint --config eslint.config.mjs src/**/*.ts --fix",
+      "lint": "eslint --config eslint.config.mjs 'src/**/*.ts' --ignore-pattern '**/*.spec.ts'",
+      "lint:fix": "eslint --config eslint.config.mjs 'src/**/*.ts' --ignore-pattern '**/*.spec.ts' --fix",
       "format": "prettier --write \"src/**/*.ts\"",
       "format:check": "prettier --check \"src/**/*.ts\"",
       "type-check": "tsc --noEmit",
       "dev": "tsup --watch",
-      "prepublishOnly": "bun run build && bun test",
+      "prepare": "husky",
+      "prepublishOnly": "bun run build",
       "prepub": "bun run build",
       "pub": "npm publish --access public"
    },
@@ -45,7 +46,9 @@
    ],
    "author": "Bruno Morillo",
    "license": "MIT",
-   "dependencies": {},
+   "dependencies": {
+      "pino": "^10.0.0"
+   },
    "devDependencies": {
       "@semantic-release/changelog": "^6.0.3",
       "@semantic-release/git": "^10.0.1",
@@ -55,34 +58,34 @@
       "@typescript-eslint/parser": "^8.0.0",
       "conventional-changelog-conventionalcommits": "^8.0.0",
       "eslint": "^9.0.0",
+      "husky": "^9.1.7",
       "prettier": "^3.0.0",
       "semantic-release": "^24.2.0",
       "tsup": "^8.0.0",
       "typescript": "~5.6.3"
    },
    "peerDependencies": {
-      "pino": "^8.0.0 || ^9.0.0",
       "winston": "^3.0.0"
    },
    "peerDependenciesMeta": {
-      "pino": {
-         "optional": true
-      },
       "winston": {
          "optional": true
       }
    },
    "repository": {
       "type": "git",
-      "url": "git+https://github.com/brmorillo/logger.git"
+      "url": "git+https://github.com/brmorillo/js-logger.git"
    },
    "bugs": {
-      "url": "https://github.com/brmorillo/logger/issues"
+      "url": "https://github.com/brmorillo/js-logger/issues"
    },
-   "homepage": "https://github.com/brmorillo/logger#readme",
+   "homepage": "https://github.com/brmorillo/js-logger#readme",
    "type": "commonjs",
    "engines": {
       "node": ">=18.0.0",
       "bun": ">=1.0.0"
+   },
+   "publishConfig": {
+      "access": "public"
    }
 }

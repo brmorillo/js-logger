@@ -9,12 +9,11 @@ A flexible and extensible logging library for TypeScript/JavaScript applications
 ## 🚀 Quick Start
 
 ```bash
-# Install
+# Install (includes Pino logger by default)
 bun add @brmorillo/logger
 
-# Optional: Install logger of choice
-bun add pino pino-pretty  # For Pino
-bun add winston           # For Winston
+# Optional: Install Winston if needed
+bun add winston
 ```
 
 ```typescript
@@ -31,17 +30,17 @@ logger.info('Hello, world!', { user: 'Bruno' });
 
 ## Features
 
-- 🚀 **Multiple Logger Implementations**: Pino, Winston, and Console
+- 🚀 **Pino Logger Included**: High-performance Pino logger comes pre-installed
 - 🎯 **Simple API**: Unified interface for all loggers
 - 🔧 **Flexible Configuration**: Easy to configure and customize
-- 📦 **Zero Required Dependencies**: Pino and Winston are optional peer dependencies
+- 📦 **Multiple Logger Support**: Pino (default), Winston (optional), and Console
 - 🎨 **Pretty Printing**: Optional formatted output for development
 - 🏭 **Singleton Pattern**: Global logger instance management
 - 🔄 **Runtime Reconfiguration**: Change logger settings on the fly
 - 🌐 **Universal**: Works with Node.js, Bun, and browsers
 - ✅ **100% TypeScript**: Full type safety with comprehensive types
 - 🔌 **Framework Ready**: Easy integration with NestJS, Express, Fastify, etc.
-- 🎭 **Auto Fallback**: Automatically falls back to console if logger package not installed
+- 🎭 **Auto Fallback**: Automatically falls back to console if needed
 
 ## Installation
 
@@ -61,19 +60,14 @@ pnpm add @brmorillo/logger
 
 ### Optional Dependencies
 
-Choose and install the logger you want to use:
+Install Winston only if you need its advanced features:
 
 ```bash
-# For Pino (recommended for production - high performance)
-bun add pino pino-pretty
-
 # For Winston (feature-rich with multiple transports)
 bun add winston
-
-# Console logger works without any additional dependencies!
 ```
 
-> **Note**: If you don't install Pino or Winston, the library will automatically fallback to the console logger.
+> **Note**: Pino comes pre-installed and is the recommended logger for production use. Winston and Console loggers are also available if needed.
 
 ## Quick Start
 
