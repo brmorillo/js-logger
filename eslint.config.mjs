@@ -6,12 +6,17 @@ export default [
    eslint.configs.recommended,
    {
       files: ['src/**/*.ts'],
+      ignores: ['src/**/*.interface.ts'],
       languageOptions: {
          parser: tsparser,
          parserOptions: {
             ecmaVersion: 2020,
             sourceType: 'module',
             project: './tsconfig.json',
+         },
+         globals: {
+            console: 'readonly',
+            require: 'readonly',
          },
       },
       plugins: {
@@ -22,9 +27,14 @@ export default [
          '@typescript-eslint/explicit-function-return-type': 'off',
          '@typescript-eslint/no-unused-vars': [
             'error',
-            { argsIgnorePattern: '^_' },
+            { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+         ],
+         'no-unused-vars': [
+            'error',
+            { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
          ],
          'no-console': 'off',
+         'no-undef': 'off',
       },
    },
 ];
