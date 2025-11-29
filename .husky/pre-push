@@ -1,0 +1,46 @@
+#!/usr/bin/env sh
+
+echo "🔍 Running pre-push checks..."
+echo ""
+
+# Lint check and fix
+echo "📋 Running lint check and fix..."
+bun run lint:fix
+if [ $? -ne 0 ]; then
+  echo "❌ Lint check failed. Please fix linting errors."
+  exit 1
+fi
+echo "✅ Lint passed"
+echo ""
+
+# Run all tests
+echo "🧪 Running all tests..."
+bun test
+if [ $? -ne 0 ]; then
+  echo "❌ Tests failed. Please fix failing tests."
+  exit 1
+fi
+echo "✅ Tests passed"
+echo ""
+
+# Type check
+echo "🔎 Running type check..."
+bun run type-check
+if [ $? -ne 0 ]; then
+  echo "❌ Type check failed. Please fix type errors."
+  exit 1
+fi
+echo "✅ Type check passed"
+echo ""
+
+# Build
+echo "🔨 Running build..."
+bun run build
+if [ $? -ne 0 ]; then
+  echo "❌ Build failed. Please fix build errors."
+  exit 1
+fi
+echo "✅ Build passed"
+echo ""
+
+echo "✨ All pre-push checks passed! Pushing..."
