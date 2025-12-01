@@ -1,6 +1,6 @@
 {
    "name": "@brmorillo/logger",
-   "version": "2.0.0",
+   "version": "2.0.1",
    "description": "A flexible and extensible logging library supporting multiple logger implementations (Pino, Winston, Console)",
    "main": "dist/index.js",
    "module": "dist/index.mjs",

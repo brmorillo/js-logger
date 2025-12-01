@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.1](https://github.com/brmorillo/js-logger/compare/v2.0.0...v2.0.1) (2025-12-01)
+
+### Documentation
+
+* update README to highlight MIT license ([0db9205](https://github.com/brmorillo/js-logger/commit/0db92056c53e0d3e0b61e9178f3c937caaaa9643))
+
 ## [2.0.0](https://github.com/brmorillo/js-logger/compare/v1.0.2...v2.0.0) (2025-11-29)
 
 ### ⚠ BREAKING CHANGES
