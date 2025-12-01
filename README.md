@@ -6,6 +6,8 @@ A flexible and extensible logging library for TypeScript/JavaScript applications
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue.svg)](https://www.typescriptlang.org/)
 
+> **Note**: This library is now licensed under the permissive MIT License, allowing you to use it freely in any project, including commercial applications.
+
 ## 🚀 Quick Start
 
 ```bash
